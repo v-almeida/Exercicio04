@@ -1,13 +1,13 @@
 package br.edu.up;
 
- class livro{
+ class Livro{
     private String codigo;
     private String titulo;
     private String autores;
     private String isbn;
     private int ano;
 
-    public livro(String codigo, String titulo, String autores, String isbn, int ano) {
+    public Livro(String codigo, String titulo, String autores, String isbn, int ano) {
         this.codigo = codigo;
         this.titulo = titulo;
         this.autores = autores;
@@ -54,11 +54,6 @@ package br.edu.up;
     public void setAno(int ano) {
         this.ano = ano;
     }
-
-    
-
-
-    
 
 
  }
