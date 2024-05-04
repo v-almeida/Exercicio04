@@ -35,4 +35,13 @@ public class Ponto {
         return new Ponto(pontinhoX, pontinhoY);
     }
 
+    public void setX(int i) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setX'");
+    }
+    public void setY(int i) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setX'");
+    }
+
 }
