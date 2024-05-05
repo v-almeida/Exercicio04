@@ -2,7 +2,7 @@ package br.edu.up;
 
 import java.util.*;
 
-public class Agenda {
+public class Agenda extends Compromisso{
     private HashMap<Integer, ArrayList<String>> compromissos;
 
     public Agenda() {
