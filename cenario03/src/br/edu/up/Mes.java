@@ -3,7 +3,7 @@ package br.edu.up;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Mes {
+public class Mes extends Compromisso {
     private String nome;
     private int qtdeDias;
     private List<Dia> dias = new ArrayList<>();
@@ -40,6 +40,11 @@ public class Mes {
             sb.append(dia.listarCompromissos()).append("\n");
         }
         return sb.toString();
+    }
+
+    public String getNome() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getNome'");
     }
 }
 

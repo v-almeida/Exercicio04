@@ -1,5 +1,7 @@
 package br.edu.up;
 
+//Superclasse
+
 public class Compromisso {
     private String pessoa;
     private String local;

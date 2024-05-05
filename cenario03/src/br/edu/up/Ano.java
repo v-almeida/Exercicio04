@@ -3,7 +3,7 @@ package br.edu.up;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Ano {
+public class Ano extends Compromisso {
     private int ano;
     private boolean bissexto;
     private Map<String, Mes> meses = new HashMap<>();
@@ -37,4 +37,3 @@ public class Ano {
         return sb.toString();
     }
 }
-
