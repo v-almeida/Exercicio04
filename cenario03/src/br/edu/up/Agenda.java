@@ -2,7 +2,7 @@ package br.edu.up;
 
 import java.util.*;
 
-public class Agenda extends Compromisso{
+public class Agenda {
     private HashMap<Integer, ArrayList<String>> compromissos;
 
     public Agenda() {
@@ -10,7 +10,7 @@ public class Agenda extends Compromisso{
     }
 
     public void adicionarCompromisso(String comp, int diaMes) {
-        if(compromissos.containsKey(diaMes)) {
+        if (compromissos.containsKey(diaMes)) {
             compromissos.get(diaMes).add(comp);
         } else {
             ArrayList<String> lista = new ArrayList<>();

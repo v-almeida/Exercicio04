@@ -3,7 +3,7 @@ package br.edu.up;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Ano extends Compromisso {
+public class Ano {
     private int ano;
     private boolean bissexto;
     private Map<String, Mes> meses = new HashMap<>();
