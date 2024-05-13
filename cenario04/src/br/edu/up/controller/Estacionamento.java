@@ -9,7 +9,7 @@ deve ser desenvolvido no padrão arquitetural Model-View-Controller (MVC), possu
 Programa que inicia a execução do software e um menu que permita ao usuário realizar as operações de
 entrada e saída de veículos. */
 
-package br.edu.up.models;
+package br.edu.up.controller;
 
 public class Estacionamento {
 
