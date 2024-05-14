@@ -13,4 +13,8 @@ public class Dia {
         this.compromissos[comp.getHora()] = comp;
     }
 
+    public void consultarCompromisso() {
+
+    }
+
 }
