@@ -11,6 +11,23 @@ entrada e saída de veículos. */
 
 package br.edu.up.controller;
 
+import br.edu.up.models.Carro;
+
 public class Estacionamento {
+
+    public boolean entradaCarro(Carro novoCarro) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'entradaCarro'");
+    }
+
+    public Carro saidaCarro(String placaRetirada) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'saidaCarro'");
+    }
+
+    public void emitirRelatorio() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'emitirRelatorio'");
+    }
 
 }
