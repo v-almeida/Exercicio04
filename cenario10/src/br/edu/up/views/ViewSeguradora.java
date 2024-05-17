@@ -2,20 +2,20 @@ package br.edu.up.views;
 
 import java.util.Scanner;
 import br.edu.up.models.*;
-import br.edu.up.controller.SeguradoraControler;
+import br.edu.up.controller.SeguradoraMetController;
 
-public class SeguradoraView {
+public class ViewSeguradora {
 
-    private SeguradoraControler controler;
+    private SeguradoraMetController controler;
     private Scanner scanner;
 
-    public SeguradoraView() {
+    public ViewSeguradora() {
         this.scanner = new Scanner(System.in);
     }
 
     public void iniciar() {
         System.out.println("Informe sua seguradora!");
-        controler = new SeguradoraControler(scanner.nextLine());
+        controler = new SeguradoraMetController(scanner.nextLine());
         while (true) {
 
             System.out.println("\n Gerenciamento de Seguros ");
@@ -68,12 +68,12 @@ public class SeguradoraView {
             scanner.nextLine();
 
             String apolice = "N" + (controler.quantidadeSeguros() + 1) + "BR";
-            System.out.print("Digite o valor do seguro: ");
+            System.out.print("Informe valor do seguro: ");
             double valor = scanner.nextDouble();
             scanner.nextLine();
 
             if (tipoSeguro == 1) {
-                System.out.print("Digite o valor da franquia: ");
+                System.out.print("Informe valor da franquia: ");
                 double valorFranquia = scanner.nextDouble();
                 System.out.print("Tem carro reserva? (true/false): ");
                 boolean temCarroReserva = scanner.nextBoolean();

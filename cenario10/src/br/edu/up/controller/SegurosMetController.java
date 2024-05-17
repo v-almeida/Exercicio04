@@ -3,7 +3,7 @@ import br.edu.up.models.Seguro;
 import br.edu.up.models.SeguroVeiculo;
 import br.edu.up.models.SeguroVida;
 
-public class SegurosControler {
+public class SegurosMetController {
 
     public Seguro CreateSeguroVida(String apolice, double vlrApolice, Boolean cobreDoenca, Boolean cobreAcidente) {
         return new SeguroVida(apolice, vlrApolice, cobreDoenca, cobreAcidente);

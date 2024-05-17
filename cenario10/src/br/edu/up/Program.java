@@ -22,13 +22,13 @@ de excluir todos os seguros do vetor;
 
 package br.edu.up;
 
-import br.edu.up.views.SeguradoraView;
+import br.edu.up.views.ViewSeguradora;
 
 public class Program {
     public static void main(String[] args) {
         
         
-        SeguradoraView view = new SeguradoraView();
+        ViewSeguradora view = new ViewSeguradora();
         view.iniciar();
        
     }
