@@ -1,44 +1,49 @@
 package br.edu.up.models;
 
 public class Estacionamento {
-    private static final int NUM_VAGAS = 10;
-    private Carro[] vagas;
-    private int vagasOcupadas;
 
-    public Estacionamento() {
-        vagas = new Carro[NUM_VAGAS];
-        vagasOcupadas = 0;
+    private Carro[] carros = new Carro[10];
+    private int vagas = 10;
+    private double valorPeriodo = 5.00;
+    private int totalDeVeiculos = 0;
+
+    public Carro[] getCarros() {
+        return carros;
     }
 
-    public boolean entradaCarro(Carro carro) {
-        if (vagasOcupadas < NUM_VAGAS) {
-            vagas[vagasOcupadas] = carro;
-            vagasOcupadas++;
-            return true;
-        }
-        return false;
-    }
-
-    public Carro saidaCarro(String placa) {
-        for (int i = 0; i < vagasOcupadas; i++) {
-            if (vagas[i].getPlaca().equals(placa)) {
-                Carro carroSaida = vagas[i];
-                vagas[i] = null;
-                vagasOcupadas--;
-                return carroSaida;
+    public void setCarro(Carro carro) {
+        for (int i = 0; i < this.carros.length; i++) {
+            if(this.carros[i] == null){
+                this.carros[i] = carro;
+                break;
             }
         }
-        return null;
+    }
+    public void setCarros(Carro[] carros) {
+        this.carros = carros;
     }
 
-    public void emitirRelatorio() {
-        int veiculosEntrada = vagasOcupadas;
-        int veiculosSaida = NUM_VAGAS - vagasOcupadas;
-        double valorTotal = veiculosEntrada * 5.0;
+    public int getVagas() {
+        return vagas;
+    }
 
-        System.out.println("Relatório:");
-        System.out.println("Veículos entraram: " + veiculosEntrada);
-        System.out.println("Veículos saíram: " + veiculosSaida);
-        System.out.println("Valor total arrecadado: R$ " + valorTotal);
+    public void setVagas(int vagas) {
+        this.vagas = vagas;
+    }
+
+    public double getValorPeriodo() {
+        return valorPeriodo;
+    }
+
+    public void setValorPeriodo(double valorPeriodo) {
+        this.valorPeriodo = valorPeriodo;
+    }
+
+    public int getTotalDeVeiculos() {
+        return totalDeVeiculos;
+    }
+
+    public void setTotalDeVeiculos(int totalDeVeiculos) {
+        this.totalDeVeiculos = totalDeVeiculos;
     }
 }
