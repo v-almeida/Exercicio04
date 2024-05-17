@@ -65,6 +65,10 @@ public class Evento {
                 + getPrecoIngresso() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()="
                 + super.toString() + "]";
     }
+    public int getId() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getId'");
+    }
 
     
 

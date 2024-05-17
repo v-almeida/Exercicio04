@@ -7,15 +7,18 @@ import br.edu.up.models.Reserva;
 
 import br.edu.up.View.Menu;
 
+import java.util.Scanner;
+
 public class Program {
     public static void main(String[] args) throws Exception {
         Menu menu = new Menu();
         EventoController eventoController = new EventoController();
         ReservaController reservaController = new ReservaController();
         boolean continuar = true; 
-        Evento evento = null; // Adicione esta linha
-        Reserva reserva = null; // Adicione esta linha
-        
+        Evento evento = null; 
+        Reserva reserva = null; 
+
+        Scanner scanner = new Scanner(System.in);
 
         while (continuar) {
             menu.exibirMenu();
@@ -24,14 +27,21 @@ public class Program {
             switch (opcao) {
             case 1:
                 System.out.println("Incluir evento selecionado.");
-                evento = new Evento("sad", null, null, 0, 0, 0);
-                evento.setNome("big");
+                System.out.print("Digite o nome do evento: ");
+                String nomeEvento = scanner.nextLine();
+                evento = new Evento(nomeEvento, null, null, 0, 0, 0);
                 eventoController.incluir(evento);
                 break;
             case 2:
                 System.out.println("Alterar evento selecionado.");
-                evento.setNome("adsada");
-                eventoController.alterar(evento);
+                System.out.print("Digite o nome do evento que deseja alterar: ");
+                nomeEvento = scanner.nextLine();
+                System.out.print("Digite o novo nome do evento: ");
+                String novoNomeEvento = scanner.nextLine();
+                evento = new Evento(novoNomeEvento, null, null, 0, 0, 0);
+                if (!eventoController.alterar(nomeEvento, evento)) {
+                    System.out.println("Evento não encontrado.");
+                }
                 break;
             case 3:
                 System.out.println("Listar eventos selecionado.");
@@ -39,18 +49,29 @@ public class Program {
                 break;
             case 4:
                 System.out.println("Excluir evento selecionado.");
-                eventoController.excluir(evento);
+                System.out.print("Digite o nome do evento que deseja excluir: ");
+                nomeEvento = scanner.nextLine();
+                if (!eventoController.excluir(nomeEvento)) {
+                    System.out.println("Evento não encontrado.");
+                }
                 break;
             case 5:
                 System.out.println("Incluir reserva selecionado.");
-                reserva = new Reserva(null, 0, null, 0);
-                reserva.setResponsavel("pericles");
+                System.out.print("Digite o nome do responsável pela reserva: ");
+                String nomeResponsavel = scanner.nextLine();
+                reserva = new Reserva(nomeResponsavel, 100, null,1000);
                 reservaController.incluir(reserva);
                 break;
             case 6:
                 System.out.println("Alterar reserva selecionado.");
-                reserva.setResponsavel("altair");
-                reservaController.alterar(reserva);
+                System.out.print("Digite o nome do responsável pela reserva que deseja alterar: ");
+                nomeResponsavel = scanner.nextLine();
+                System.out.print("Digite o novo nome do responsável pela reserva: ");
+                String novoNomeResponsavel = scanner.nextLine();
+                reserva = new Reserva(novoNomeResponsavel, 100, null,1000);
+                if (!reservaController.alterar(nomeResponsavel, reserva)) {
+                    System.out.println("Reserva não encontrada.");
+                }
                 break;
             case 7:
                 System.out.println("Listar reservas selecionado.");
@@ -58,7 +79,11 @@ public class Program {
                 break;
             case 8:
                 System.out.println("Excluir reserva selecionado.");
-                reservaController.excluir(reserva);
+                System.out.print("Digite o nome do responsável pela reserva que deseja excluir: ");
+                nomeResponsavel = scanner.nextLine();
+                if (!reservaController.excluir(nomeResponsavel)) {
+                    System.out.println("Reserva não encontrada.");
+                }
                 break;
             case 9:
                 System.out.println("Saindo...");
@@ -66,14 +91,8 @@ public class Program {
                 break;
             default:
                 System.out.println("Opção inválida. Por favor, tente novamente.");
+            }
         }
-
-
-
-
-        }
-
-
-        
+        scanner.close();
     }
 }

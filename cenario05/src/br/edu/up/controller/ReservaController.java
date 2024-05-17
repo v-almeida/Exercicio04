@@ -15,13 +15,14 @@ public class ReservaController {
         }
     }
 
-    public void alterar(Reserva reserva) {
+    public boolean alterar(String responsavel, Reserva reserva) {
         for (int i = 0; i < count; i++) {
-            if (reservas[i].getResponsavel().equals(reserva.getResponsavel())) {
+            if (reservas[i].getResponsavel().equals(responsavel)) {
                 reservas[i] = reserva;
-                break;
+                return true;
             }
         }
+        return false;
     }
 
     public void listar() {
@@ -30,16 +31,16 @@ public class ReservaController {
         }
     }
 
-    public void excluir(Reserva reserva) {
+    public boolean excluir(String responsavel) {
         for (int i = 0; i < count; i++) {
-            if (reservas[i].getResponsavel().equals(reserva.getResponsavel())) {
+            if (reservas[i].getResponsavel().equals(responsavel)) {
                 for (int j = i; j < count - 1; j++) {
                     reservas[j] = reservas[j + 1];
                 }
                 count--;
-                break;
+                return true;
             }
         }
+        return false;
     }
 }
-

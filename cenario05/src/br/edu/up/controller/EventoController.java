@@ -15,13 +15,14 @@ public class EventoController {
         }
     }
 
-    public void alterar(Evento evento) {
+    public boolean alterar(String nome, Evento evento) {
         for (int i = 0; i < count; i++) {
-            if (eventos[i].getNome().equals(evento.getNome())) {
+            if (eventos[i].getNome().equals(nome)) {
                 eventos[i] = evento;
-                break;
+                return true;
             }
         }
+        return false;
     }
 
     public void listar() {
@@ -30,16 +31,16 @@ public class EventoController {
         }
     }
 
-    public void excluir(Evento evento) {
+    public boolean excluir(String nome) {
         for (int i = 0; i < count; i++) {
-            if (eventos[i].getNome().equals(evento.getNome())) {
+            if (eventos[i].getNome().equals(nome)) {
                 for (int j = i; j < count - 1; j++) {
                     eventos[j] = eventos[j + 1];
                 }
                 count--;
-                break;
+                return true;
             }
         }
+        return false;
     }
 }
-
