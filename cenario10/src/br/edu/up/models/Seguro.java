@@ -1,58 +1,47 @@
 package br.edu.up.models;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
-public class Seguro {
-    private String apolice;
-    private Segurado segurado;
-    private double virApolice;
-    private LocalDate dtaInicio;
-    private LocalDate dtaFim;
-
+public abstract class Seguro {
+    protected String apolice;
+    protected double vlrApolice;
+    protected LocalDate dtInicio;
+    protected LocalDate dtFim;
     
+
     public String getApolice() {
-        return apolice;
+        return this.apolice;
     }
 
-    public Segurado getSegurado() {
-        return segurado;
-    }
-
-    public double getVirApolice() {
-        return virApolice;
-    }
-
-    public LocalDate getDtaInicio() {
-        return dtaInicio;
-    }
-
-    public LocalDate getDtaFim() {
-        return dtaFim;
-    }
-
-    
     public void setApolice(String apolice) {
         this.apolice = apolice;
     }
 
-    public void setSegurado(Segurado segurado) {
-        this.segurado = segurado;
+    public double getVlrApolice() {
+        return this.vlrApolice;
     }
 
-    public void setVirApolice(double virApolice) {
-        this.virApolice = virApolice;
+    public void setVlrApolice(double vlrApolice) {
+        this.vlrApolice = vlrApolice;
     }
 
-    public void setDtaInicio(LocalDate dtaInicio) {
-        this.dtaInicio = dtaInicio;
+    public LocalDate getDtInicio() {
+        return this.dtInicio;
     }
 
-    public void setDtaFim(LocalDate dtaFim) {
-        this.dtaFim = dtaFim;
+    public void setDtInicio(LocalDate dtInicio) {
+        this.dtInicio = dtInicio;
     }
 
-    
-    public String getDados() {
-        return "Apolice: " + apolice + ", Segurado: " + segurado.getNome() + ", Valor da Apolice: " + virApolice + ", Data de Início: " + dtaInicio + ", Data de Fim: " + dtaFim;
+    public LocalDate getDtFim() {
+        return this.dtFim;
     }
+
+    public void setDtFim(LocalDate dtFim) {
+        this.dtFim = dtFim;
+    }
+
+   
+
 }

@@ -1,33 +1,52 @@
 package br.edu.up.models;
 
-public class SeguroVida {
-    private boolean cobreDoenca;
-    private boolean cobreAcidente;
+import java.time.LocalDateTime;
 
-    
-    public boolean getCobreDoenca() {
+public class SeguroVida extends Seguro {
+    private Boolean cobreDoenca;
+    private Boolean cobreAcidente;
+
+    public Boolean isCobreDoenca() {
         return this.cobreDoenca;
     }
 
-    
-    public void setCobreDoenca(boolean cobreDoenca) {
+    public Boolean getCobreDoenca() {
+        return this.cobreDoenca;
+    }
+
+    public void setCobreDoenca(Boolean cobreDoenca) {
         this.cobreDoenca = cobreDoenca;
     }
 
-    
-    public boolean getCobreAcidente() {
+    public Boolean isCobreAcidente() {
         return this.cobreAcidente;
     }
 
-    
-    public void setCobreAcidente(boolean cobreAcidente) {
+    public Boolean getCobreAcidente() {
+        return this.cobreAcidente;
+    }
+
+    public void setCobreAcidente(Boolean cobreAcidente) {
         this.cobreAcidente = cobreAcidente;
     }
 
-    
-    public String getDados() {
-        return "Cobre Doença: " + (this.cobreDoenca ? "Sim" : "Não") +
-               ", Cobre Acidente: " + (this.cobreAcidente ? "Sim" : "Não");
+    public SeguroVida(String apolice, double vlrApolice, Boolean cobreDoenca, Boolean cobreAcidente) {
+        super.setApolice(apolice);
+        super.setVlrApolice(vlrApolice);
+        super.setDtFim(dtFim);
+        this.cobreDoenca = cobreDoenca;
+        this.cobreAcidente = cobreAcidente;
+        this.dtInicio = LocalDateTime.now().toLocalDate();
     }
-}
 
+    public String toString() {
+        return "SeguroVida\n   {\n" +
+           "   \"apolice\" = \"" + apolice + '\'' +
+           "\", \n   \"vlrApolice\" = " + vlrApolice +
+           ", \n   \"dtInicio\" = \"" + dtInicio +
+           "\", \n   \"cobreDoenca\" = \"" + cobreDoenca +
+           "\", \n   \"cobreAcidente\" = \"" + cobreAcidente +
+           "\"\n   }\n";
+    }
+
+}
