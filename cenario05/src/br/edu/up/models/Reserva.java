@@ -1,61 +1,39 @@
 package br.edu.up.models;
 
-import java.util.Date;
+import java.time.LocalDate;
 
-public class Reserva {
-    
-    private String responsavel;
-    private int quantidadePessoas;
-    private Date data;
-    private double valorTotal;
+public class Reserva extends Serv {
+    private String nomeResponsavel;
+    private int qtdePessoas;
 
-
-    
-    public Reserva(String responsavel, int quantidadePessoas, Date data, double valorTotal) {
-        this.responsavel = responsavel;
-        this.quantidadePessoas = quantidadePessoas;
+    public Reserva(String nome, String data, String nomeResponsavel, double valor,  int qtdePessoas) {
+        this.nome = nome;
         this.data = data;
-        this.valorTotal = valorTotal;
+        this.valor = valor;
+        this.nomeResponsavel = nomeResponsavel;
+        this.qtdePessoas = qtdePessoas;
     }
-    
-    public String getResponsavel() {
-        return responsavel;
-    }
-    public void setResponsavel(String responsavel) {
-        this.responsavel = responsavel;
-    }
-    public int getQuantidadePessoas() {
-        return quantidadePessoas;
-    }
-    public void setQuantidadePessoas(int quantidadePessoas) {
-        this.quantidadePessoas = quantidadePessoas;
-    }
-    public Date getData() {
-        return data;
-    }
-    public void setData(Date data) {
-        this.data = data;
-    }
-    public double getValorTotal() {
-        return valorTotal;
-    }
-    public void setValorTotal(double valorTotal) {
-        this.valorTotal = valorTotal;
-    }
-
     @Override
     public String toString() {
-        return "Reserva [responsavel=" + responsavel + ", quantidadePessoas=" + quantidadePessoas + ", data=" + data
-                + ", valorTotal=" + valorTotal + ", getResponsavel()=" + getResponsavel() + ", getQuantidadePessoas()="
-                + getQuantidadePessoas() + ", getData()=" + getData() + ", getValorTotal()=" + getValorTotal()
-                + ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
-                + "]";
+        return "Reserva [nome=" + getNome() + ", data=" + getData() + ", valor=" + getValor() + ", nomeResponsavel=" + nomeResponsavel
+                + ", qtdePessoas=" + qtdePessoas + "]";
     }
 
-    public int getId() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getId'");
+    public String getNomeResponsavel() {
+        return nomeResponsavel;
     }
-    
-    
+
+    public void setNomeResponsavel(String nomeResponsavel) {
+        this.nomeResponsavel = nomeResponsavel;
+    }
+
+    public int getQtdePessoas() {
+        return qtdePessoas;
+    }
+
+    public void setQtdePessoas(int qtdePessoas) {
+        this.qtdePessoas = qtdePessoas;
+    }
+
+  
 }
